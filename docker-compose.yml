@@ -52,6 +52,8 @@ services:
       - "8081:80"
     environment:
       PMA_HOST: db
+      PMA_USER: pmauser 
+      PMA_PASSWORD: pmauserpw
       MYSQL_ROOT_PASSWORD: segreta
 
 volumes:
