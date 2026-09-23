@@ -41,7 +41,7 @@ services:
 
   nginx:
       build:
-        context: ./nginx
+        context: ./backend
         dockerfile: Dockerfile
       container_name: esempio-nginx
       ports:
