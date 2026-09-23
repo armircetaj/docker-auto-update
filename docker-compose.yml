@@ -41,7 +41,18 @@ services:
       ports:
         - "8080:80"
       depends_on:
-        - backend      
+        - backend    
+  phpmyadmin:
+    image: phpmyadmin:latest
+    restart: always
+    depends_on:
+      - db
+    container_name: esempio-phpmyadmin
+    ports:
+      - "8081:80"
+    envoirnment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: segreta
 
 volumes:
   uploads:
