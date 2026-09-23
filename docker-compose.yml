@@ -50,7 +50,7 @@ services:
     container_name: esempio-phpmyadmin
     ports:
       - "8081:80"
-    envoirnment:
+    environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: segreta
 
