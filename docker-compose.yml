@@ -16,7 +16,9 @@ services:
       retries: 10
 
   backend:
-    build: .
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
     container_name: esempio-flask
     environment:
       DB_HOST: db
@@ -28,20 +30,9 @@ services:
       db:
         condition: service_healthy
 
-  # nginx:
-  #   image: nginx:alpine
-  #   container_name: esempio-nginx
-  #   ports:
-  #     - "8080:80"
-  #   volumes:
-  #   #  - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
-  #     - ./nginx.conf:/etc/nginx/nginx.conf:ro
-  #   depends_on:
-  #     - backend
-
   nginx:
       build:
-        context: ./backend
+        context: ./nginx
         dockerfile: Dockerfile
       container_name: esempio-nginx
       ports:
