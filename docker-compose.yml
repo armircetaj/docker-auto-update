@@ -24,7 +24,7 @@ services:
     container_name: esempio-flask
     environment:
       DB_HOST: db
-      DB_PASSWORD: segreta
+      DB_PASSWORD: dbadminpw
       DB_NAME: esempio
       DB_USER: dbadmin
     volumes:
